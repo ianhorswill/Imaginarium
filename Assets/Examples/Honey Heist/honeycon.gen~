@@ -1,0 +1,8 @@
+A honeycon has a prize from prizes.
+A honeycon has a surprise from surprises.
+A honeycon has a locale called its location.
+A honeycon has a convention organizer called its chair.
+A honeycon is identified as "Honeycon".
+A honeycon has a security feature called its first security feature.
+A honeycon has a security feature called its second security feature.
+A honeycon is described as "Honeycon is held in a [location], its organizer is [chair]. Its prize is [prize].  It has [first security feature] and [second security feature].".
