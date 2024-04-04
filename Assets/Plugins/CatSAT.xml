@@ -868,7 +868,7 @@
         <member name="F:CatSAT.BooleanSolver.Propositions">
             <summary>
             States of the different propositions of the Program, indexed by proposition number.
-            IMPORTANT: this is a cache of solution.Propositions.
+            IMPORTANT: this is an alias of solution.Propositions.
             </summary>
         </member>
         <member name="F:CatSAT.BooleanSolver.TrueDisjunctCount">
@@ -1338,6 +1338,11 @@
         <member name="F:CatSAT.Constraint.Disjuncts">
             <summary>
             The literals of the constraint
+            </summary>
+        </member>
+        <member name="M:CatSAT.Constraint.SpecialHandlingVariables">
+            <summary>
+            Any variables that require special handling when flipped
             </summary>
         </member>
         <member name="F:CatSAT.Constraint.UnPredeterminedDisjuncts">
@@ -2845,6 +2850,11 @@
             Used to know what clauses to check if we flip this variable
             </summary>
         </member>
+        <member name="F:CatSAT.SATVariable.SpecialConstraints">
+            <summary>
+            Constraints that need special handling during a flip of this proposition
+            </summary>
+        </member>
         <member name="T:CatSAT.SATVariable.DeterminationState">
             <summary>
             Tracks whether the variable's value is pre-determined, and why
@@ -2884,7 +2894,12 @@
         </member>
         <member name="P:CatSAT.SATVariable.IsPredetermined">
             <summary>
-            Whether the value of the variable is fixed.
+            Whether the value of the variable is forced by the current set and preinitialized values
+            </summary>
+        </member>
+        <member name="P:CatSAT.SATVariable.IsStronglyPredetermined">
+            <summary>
+            Whether the value of the value is forced by the current set values.
             </summary>
         </member>
         <member name="F:CatSAT.SATVariable.PredeterminedValue">
