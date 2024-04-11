@@ -534,9 +534,10 @@
             <returns>All kinds that apply to individual</returns>
         </member>
         <member name="T:Imaginarium.Generator.PossibleIndividual">
-            <summary>
-            Represents the instantiation of a specific Individual within a specific Invention (possible world).
-            </summary>
+             <summary>
+             Represents the instantiation of a specific Individual within a specific Invention (possible world).
+             </summary>
+            
         </member>
         <member name="P:Imaginarium.Generator.PossibleIndividual.Generator">
             <summary>
@@ -1820,7 +1821,7 @@
         </member>
         <member name="P:Imaginarium.Ontology.Verb.SubjectModifiers">
             <summary>
-            Modifies that must also be true of subjects of the verb
+            Modifiers that must also be true of subjects of the verb
             </summary>
         </member>
         <member name="P:Imaginarium.Ontology.Verb.ObjectKind">
@@ -1832,6 +1833,47 @@
             <summary>
             Modifiers that must also be true of the objects of the verb.
             </summary>
+        </member>
+        <member name="T:Imaginarium.Ontology.Verb.ModifiedKind">
+            <summary>
+            A struct representing a verb's kind and modifiers.
+            </summary>
+        </member>
+        <member name="F:Imaginarium.Ontology.Verb.ModifiedKind.Kind">
+            <summary>
+            The verb's kind.
+            </summary>
+        </member>
+        <member name="F:Imaginarium.Ontology.Verb.ModifiedKind.Modifiers">
+            <summary>
+            The verb's modifiers.
+            </summary>
+        </member>
+        <member name="M:Imaginarium.Ontology.Verb.ModifiedKind.#ctor(Imaginarium.Ontology.CommonNoun,Imaginarium.Ontology.MonadicConceptLiteral[])">
+            <summary>
+            Constructs a ModifiedKind.
+            </summary>
+            <param name="kind">The kind.</param>
+            <param name="modifiers">The list of modifiers.</param>
+        </member>
+        <member name="M:Imaginarium.Ontology.Verb.ModifiedKind.Deconstruct(Imaginarium.Ontology.CommonNoun@,Imaginarium.Ontology.MonadicConceptLiteral[]@)">
+            <summary>
+            Deconstructs a ModifiedKind.
+            </summary>
+            <param name="kind">The kind.</param>
+            <param name="modifiers">The modifiers.</param>
+        </member>
+        <member name="F:Imaginarium.Ontology.Verb.SubjectAndObjectKindsAndModifiers">
+            <summary>
+            The list of subject kinds (and modifiers) and object kinds (and modifiers).
+            </summary>
+        </member>
+        <member name="M:Imaginarium.Ontology.Verb.AddSubjectObject(Imaginarium.Ontology.Verb.ModifiedKind,Imaginarium.Ontology.Verb.ModifiedKind)">
+            <summary>
+            Adds a new tuple to SubjectAndObjectKindsAndModifiers.
+            </summary>
+            <param name="subj">The subject ModifiedKind.</param>
+            <param name="obj">The object ModifiedKind.</param>
         </member>
         <member name="T:Imaginarium.Ontology.VerbConjugation">
             <summary>
@@ -3062,6 +3104,11 @@
         <member name="F:Imaginarium.Parsing.SimpleClosedClassSegment.Optional">
             <summary>
             This constituent is always optional; it can match the empty string.
+            </summary>
+        </member>
+        <member name="P:Imaginarium.Parsing.SimpleClosedClassSegment.Matched">
+            <summary>
+            True if the segment matched something
             </summary>
         </member>
         <member name="M:Imaginarium.Parsing.SimpleClosedClassSegment.#ctor(Imaginarium.Parsing.Parser,System.Object[])">
